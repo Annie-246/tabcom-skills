@@ -1,0 +1,11 @@
+{
+  "name": "social-qa-video",
+  "version": "1.0.0",
+  "displayName": "Social QA Video",
+  "description": "Biến bài hỏi-đáp trên Threads/Facebook thành video dọc 9:16: ảnh chụp thật của bài đăng và bình luận trôi trên nền phong cảnh, giọng đọc tiếng Việt, nhạc nền.",
+  "author": { "name": "Annie-246", "url": "https://github.com/Annie-246" },
+  "homepage": "https://github.com/Annie-246/tabcom-skills",
+  "repository": "https://github.com/Annie-246/tabcom-skills",
+  "license": "MIT",
+  "keywords": ["video","threads","facebook","tiktok","reels","vietnamese"]
+}

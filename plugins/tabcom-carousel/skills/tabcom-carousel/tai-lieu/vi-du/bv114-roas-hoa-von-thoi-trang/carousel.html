@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>BV114 ROAS hòa vốn ngành thời trang</title>
+<style>
+@font-face{font-family:Inter;src:url('_assets/fonts/inter/Inter-Variable.ttf')}
+@font-face{font-family:Mulish;src:url('_assets/fonts/mulish/Mulish-Variable.ttf')}
+*{box-sizing:border-box}
+html,body{margin:0;background:#ddd}
+body{display:flex;flex-direction:column;align-items:center;gap:24px}
+.slide{position:relative;width:1080px;height:1080px;overflow:hidden;color:#111111;
+ font-family:Mulish,Arial,sans-serif;
+ background:#fff url('_assets/tabcom-carousel-background-blue-2026.png') center/cover no-repeat}
+.content{position:absolute;left:80px;right:80px;top:154px;bottom:150px;display:flex;flex-direction:column}
+.title{margin:0;font-family:Inter,Arial,sans-serif;font-weight:700;font-size:46px;line-height:.90;
+ letter-spacing:-.6px;text-transform:uppercase}
+.title span{display:block;width:fit-content;padding:.24em 0 .06em;
+ background:linear-gradient(90deg,#0246AD,#12B49C);-webkit-background-clip:text;background-clip:text;color:transparent}
+.rule{width:96px;height:6px;flex:none;background:#08DEB7;margin:18px 0 0;border-radius:4px}
+.lead{margin:26px 0 0;font-size:26px;line-height:1.42}
+.lead b{font-weight:700}
+.it{display:flex;gap:14px;font-size:25px;line-height:1.42;margin-top:16px}
+.it i{flex:0 0 9px;height:9px;border-radius:50%;background:#111111;display:block;margin-top:13px}
+.it b{font-weight:700}
+.it span,.lead,.foot{text-wrap:pretty}
+.items{margin-top:26px}
+.items>.it:first-child{margin-top:0}
+.foot{margin:22px 0 0;font-size:25px;line-height:1.4;color:#C60001;font-weight:700}
+
+.shot{flex:none;margin-top:26px;border-radius:20px;border:2px solid #C9CEE6;background:#fff;overflow:hidden;padding:14px}
+.shot img{width:100%;height:auto;display:block;margin:0 auto}
+
+.row{display:flex;align-items:flex-start;gap:40px;margin-top:26px}
+.txt{flex:1;min-width:0}
+.txt .it{font-size:24px}
+.txt>.it:first-child{margin-top:0}
+.pic{flex:none}
+.pic .shot{margin-top:0}
+
+.tbl{flex:none;margin-top:28px;display:flex;flex-direction:column;
+ border:2px solid #C9CEE6;border-radius:18px;background:#fff;overflow:hidden}
+.tbl .r{display:grid;grid-template-columns:96px 1fr;border-bottom:2px solid #EEF0F8}
+.tbl .r:last-child{border-bottom:0}
+.tbl .r>div{display:flex;align-items:center;padding:14px 22px;font-size:24px;line-height:1.34}
+.tbl .r>div:first-child{justify-content:center;font-family:Inter,Arial,sans-serif;font-weight:700;
+ font-size:30px;color:#0246AD;background:#F2F4FB}
+.tbl .r>div+div{border-left:2px solid #EEF0F8}
+.tbl b{font-weight:700}
+.tbl.cost .r{grid-template-columns:1fr 112px 176px}
+.tbl.cost .r>div{padding:9px 22px}
+.tbl.cost .r>div:first-child{justify-content:flex-start;font-family:Mulish,Arial,sans-serif;font-weight:400;
+ font-size:24px;color:#111111;background:#fff}
+.tbl.cost .r>div:nth-child(2),.tbl.cost .r>div:nth-child(3){justify-content:flex-end;font-variant-numeric:tabular-nums}
+.tbl.cost .r.sum>div{font-weight:700}
+.tbl.cost .r.hi>div{font-weight:700;background:#F2F4FB;color:#0246AD}
+.tbl.cost .r.note>div{font-size:20px;color:#111111;padding:9px 22px;background:#fff;font-weight:400;grid-column:1/-1;border-left:0}
+
+.cmp{margin-top:24px;display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.card{border:2px solid #C9CEE6;border-radius:16px;background:#fff;padding:24px 28px}
+.card.hi{border-color:#0246AD}
+.card .lab{font-size:25px;font-weight:700;line-height:1.3}
+.card .big{font-size:66px;font-weight:700;line-height:1.15;margin-top:8px;font-family:Inter,Arial,sans-serif}
+.card.hi .big{color:#0246AD}
+.card .rw{margin-top:14px;padding-top:12px;border-top:2px solid #EEF1F8;font-size:24px;line-height:1.38}
+.note{margin:14px 0 0;font-size:22px;line-height:1.36;color:#111111}
+</style>
+</head>
+<body>
+
+<section class="slide"><div class="content">
+<h1 class="title"><span>Tính ROAS hòa vốn trên lãi gộp</span><span>là tính thiếu một nửa chi phí</span></h1>
+<div class="rule"></div>
+<p class="lead">Số đông lấy 1 chia biên lợi nhuận gộp ra ROAS hòa vốn, rồi lấy con số đó làm mốc an toàn khi chạy quảng cáo.</p>
+<div class="items">
+<div class="it"><i></i><span><b>Ví dụ áo bán 200.000đ, giá vốn 60.000đ:</b> lãi gộp 70%, ROAS hòa vốn ra 1 chia 70% bằng 1,43. Nhìn mốc này, ROAS 5.0 trông như lãi gấp ba.</span></div>
+<div class="it"><i></i><span><b>Con số 1,43 mới trừ tiền vải và tiền may.</b> Phí sàn, voucher, hàng hoàn, tồn lẻ size và bao bì chưa trừ, cộng lại lớn ngang giá vốn.</span></div>
+<div class="it"><i></i><span><b>ROAS trong Shopee Ads đứng trên doanh thu đơn đã đặt,</b> chưa trừ chi phí nào. Mốc tính thiếu thì ROAS 5.0 vẫn có thể là bán để nuôi phí.</span></div>
+</div>
+<div class="shot"><img src="ui-1-quang-cao-shopee-roas.png" alt=""></div>
+<p class="foot">Mốc hòa vốn chỉ đúng khi biên đã trừ đủ mọi khoản sau giá vốn.</p>
+</div></section>
+
+<section class="slide"><div class="content">
+<h1 class="title"><span>Bốn khoản chi phí ẩn</span><span>ăn mòn lãi của shop thời trang</span></h1>
+<div class="rule"></div>
+<p class="lead">Bốn khoản này không nằm trong hóa đơn xưởng, nhưng tháng nào cũng trừ vào tiền về tài khoản.</p>
+<div class="tbl">
+<div class="r"><div>01</div><div><span><b>Hàng hoàn và đổi size.</b> Khách được gửi yêu cầu trả hàng trong 15 ngày sau khi nhận, phí ship chiều trả do shop chịu. Thời trang thường hoàn đổi 8% đến 15% số đơn, livestream có thể lên 20% đến 30%.</span></div></div>
+<div class="r"><div>02</div><div><span><b>Tồn kho lẻ size.</b> Nhập 1.000 áo thường kẹt lại 15% đến 20% ở size S và XL, phải xả dưới giá vốn mới đẩy đi được.</span></div></div>
+<div class="r"><div>03</div><div><span><b>Phí sàn.</b> Phí Cố Định theo ngành hàng, Phí Xử Lý Giao Dịch 6%, Voucher Xtra 5,5%, thêm 3.000đ phí hạ tầng mỗi đơn. Với thời trang, ba khoản đầu cộng lại thường trên 20% giá bán.</span></div></div>
+<div class="r"><div>04</div><div><span><b>Bao bì và quà tặng.</b> Hộp, túi zip, tem mác, giấy thơm, quà kèm đơn ngốn 3% đến 5% giá bán.</span></div></div>
+</div>
+<p class="foot">Khoản bị trừ tự động là khoản dễ quên nhất khi tính hòa vốn.</p>
+</div></section>
+
+<section class="slide"><div class="content">
+<h1 class="title"><span>Bóc tách chi phí</span><span>trên một chiếc áo 200.000đ</span></h1>
+<div class="rule"></div>
+<p class="lead">Áo bán 200.000đ, giá vốn 60.000đ, trừ tiếp từng khoản dưới đây.</p>
+<div class="tbl cost">
+<div class="r"><div>Giá vốn: vải, may, nhập hàng</div><div>30%</div><div>60.000đ</div></div>
+<div class="r"><div>Phí Cố Định và Phí Xử Lý Giao Dịch</div><div>20%</div><div>40.000đ</div></div>
+<div class="r"><div>Voucher Xtra và mã giảm giá shop đồng tài trợ</div><div>8%</div><div>16.000đ</div></div>
+<div class="r"><div>Hàng hoàn, đổi size, hỏng bao bì</div><div>8%</div><div>16.000đ</div></div>
+<div class="r"><div>Dự phòng tồn lẻ size, xả hàng</div><div>5%</div><div>10.000đ</div></div>
+<div class="r"><div>Bao bì, đóng gói, quà tặng</div><div>4%</div><div>8.000đ</div></div>
+<div class="r sum"><div>Tổng chi phí, chưa tính quảng cáo</div><div>75%</div><div>150.000đ</div></div>
+<div class="r hi"><div>Biên đóng góp còn lại</div><div>25%</div><div>50.000đ</div></div>
+<div class="r note"><div>Số minh họa. Tỷ lệ phí và tỷ lệ hoàn đổi lấy từ đơn Đã giao của chính shop.</div></div>
+</div>
+<p class="foot">25% này là toàn bộ tiền còn lại để trả quảng cáo, trả lương và để lãi.</p>
+</div></section>
+
+<section class="slide"><div class="content">
+<h1 class="title"><span>ROAS hòa vốn đúng là 4.0</span><span>chưa tính lương và mặt bằng</span></h1>
+<div class="rule"></div>
+<p class="lead">ROAS hòa vốn bằng 1 chia biên đóng góp: biên 25% cho mốc 4.0, mới trả xong tiền quảng cáo trên từng đơn. Lương, kho, mặt bằng là chi phí theo tháng, trừ sau khi lấy biên nhân số đơn.</p>
+<div class="cmp">
+<div class="card"><div class="lab">Trên báo cáo Shopee Ads</div><div class="big">ROAS 5.0</div>
+<div class="rw">Doanh thu tháng <b>500 triệu</b><br>Tiền quảng cáo <b>100 triệu</b></div></div>
+<div class="card hi"><div class="lab">Tiền còn lại cuối tháng</div><div class="big">Lỗ 25 triệu</div>
+<div class="rw">Biên đóng góp 25%: <b>125 triệu</b><br>Trừ quảng cáo còn <b>25 triệu</b><br>Trừ lương, kho, mặt bằng <b>50 triệu</b></div></div>
+</div>
+<p class="note">Số minh họa: 2.500 áo giá 200.000đ, toàn bộ đơn đến từ quảng cáo, chi phí cố định 50 triệu một tháng.</p>
+<p class="foot">Mốc 4.0 mới trả xong tiền quảng cáo, chưa trả lương và mặt bằng.</p>
+</div></section>
+
+<section class="slide"><div class="content">
+<h1 class="title"><span>Ba việc làm ngay</span><span>để ROAS 5.0 thành tiền thật</span></h1>
+<div class="rule"></div>
+<p class="lead">Ba việc ngoài quảng cáo quyết định ROAS có đổi ra tiền hay không.</p>
+<div class="row">
+<div class="txt">
+<div class="it"><i></i><span><b>01. Làm bảng quy đổi kích cỡ cho từng mẫu</b> với số đo thật, trong Tất cả sản phẩm, Cài đặt sản phẩm. Mỗi 1% đơn đổi size giảm được là bớt một lần ship hai chiều.</span></div>
+<div class="it"><i></i><span><b>02. Nhập thử 50 đến 100 chiếc cho mẫu mới,</b> theo dõi trong Phân Tích Bán Hàng. Mẫu chậm thì dừng nhập và xả sớm, mẫu chạy mới nhập đủ size số lượng lớn.</span></div>
+<div class="it"><i></i><span><b>03. Tách ROAS quảng cáo khỏi ROAS toàn shop.</b> Doanh thu trong Shopee Ads tính trên đơn đã đặt, gồm cả đơn hoàn. Lấy doanh thu đơn hoàn thành của cả shop chia tổng tiền quảng cáo mới ra ROAS thật.</span></div>
+</div>
+<div class="pic" style="width:330px">
+<div class="shot" style="padding:0;border-radius:16px"><img src="ui-5-menu-bang-quy-doi-kich-co.png" alt=""></div>
+</div>
+</div>
+<p class="foot">Giảm hoàn, giảm tồn lẻ size, đọc đúng doanh thu: ba cách kéo biên lên.</p>
+</div></section>
+
+</body>
+</html>

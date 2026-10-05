@@ -1,0 +1,11 @@
+{
+  "name": "tabcom-carousel",
+  "version": "1.0.0",
+  "displayName": "Tabcom Carousel",
+  "description": "Dựng bộ ảnh carousel 1080x1080 cho Tabcom: HTML theo khung chuẩn, crop ảnh thật Shopee/TikTok Shop, đo nhịp dọc và render PNG bằng Playwright.",
+  "author": { "name": "Annie-246", "url": "https://github.com/Annie-246" },
+  "homepage": "https://github.com/Annie-246/tabcom-skills",
+  "repository": "https://github.com/Annie-246/tabcom-skills",
+  "license": "MIT",
+  "keywords": ["carousel","tabcom","shopee","tiktok-shop","playwright","vietnamese"]
+}

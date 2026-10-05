@@ -1,0 +1,9 @@
+{
+  "name": "tabcom-carousel-scripts",
+  "private": true,
+  "type": "module",
+  "description": "Script đo và render carousel Tabcom. Chạy `npm install` một lần trong thư mục này.",
+  "dependencies": {
+    "playwright-core": "^1.55.0"
+  }
+}

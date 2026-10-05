@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>{{TITLE}}</title>
+<style>
+/* ============================================================
+   KHUNG CHUẨN CAROUSEL TABCOM 1080x1080
+   Không đổi số đo của .slide, .content, .title, .rule, màu chữ.
+   Được phép: thêm class biến thể, chỉnh padding/cỡ chữ trong khối thân
+   để vừa nhịp dọc (cỡ chữ nội dung tối thiểu 23 px).
+   ============================================================ */
+@font-face{font-family:Inter;src:url('_assets/fonts/inter/Inter-Variable.ttf')}
+@font-face{font-family:Mulish;src:url('_assets/fonts/mulish/Mulish-Variable.ttf')}
+*{box-sizing:border-box}
+html,body{margin:0;background:#ddd}
+body{display:flex;flex-direction:column;align-items:center;gap:24px}
+.slide{position:relative;width:1080px;height:1080px;overflow:hidden;color:#111111;
+ font-family:Mulish,Arial,sans-serif;
+ background:#fff url('_assets/{{BACKGROUND}}') center/cover no-repeat}
+/* Khung nội dung nằm giữa tab logo (đáy y khoảng 84) và chân trang in sẵn (y khoảng 996) */
+.content{position:absolute;left:80px;right:80px;top:154px;bottom:150px;display:flex;flex-direction:column}
+
+/* --- Tiêu đề: Inter Bold, IN HOA, gradient. MỖI DÒNG MỘT <span>, padding chống cắt dấu --- */
+.title{margin:0;font-family:Inter,Arial,sans-serif;font-weight:700;font-size:46px;line-height:.90;
+ letter-spacing:-.6px;text-transform:uppercase}
+.title span{display:block;width:fit-content;padding:.24em 0 .06em;
+ background:linear-gradient(90deg,#0246AD,#12B49C);-webkit-background-clip:text;background-clip:text;color:transparent}
+.rule{width:96px;height:6px;flex:none;background:#08DEB7;margin:18px 0 0;border-radius:4px}
+
+/* --- Dòng dẫn, bullet, câu chốt --- */
+.lead{margin:26px 0 0;font-size:26px;line-height:1.42}
+.lead b{font-weight:700}
+.items{margin-top:26px}
+.it{display:flex;gap:14px;font-size:25px;line-height:1.42;margin-top:16px}
+.items>.it:first-child{margin-top:0}
+.it i{flex:0 0 9px;height:9px;border-radius:50%;background:#111111;display:block;margin-top:13px}
+.it b{font-weight:700}
+.it .n{font-weight:700;color:#0246AD}
+.it span,.lead,.foot{text-wrap:pretty}
+.foot{margin:22px 0 0;font-size:25px;line-height:1.4;color:#C60001;font-weight:700}
+
+/* --- Ảnh băng ngang (ảnh chụp giao diện đặt dưới chữ, cách chữ 26 px) --- */
+.shot{flex:none;margin-top:26px;border-radius:20px;border:2px solid #C9CEE6;background:#fff;overflow:hidden;padding:22px}
+.shot img{width:100%;height:auto;display:block;margin:0 auto}
+.shot.pad{padding:48px}          /* slide dư chỗ: tăng padding thay vì phóng ảnh */
+.shot.w720 img{max-width:720px}  /* ảnh gốc hẹp, không kéo giãn quá 720 */
+
+/* --- Hai cột: chữ + ảnh (ảnh bên phải; thêm .rev để ảnh bên trái) --- */
+.row{display:flex;align-items:flex-start;gap:40px;margin-top:26px}
+.row.rev{flex-direction:row-reverse}
+.txt{flex:1;min-width:0}
+.txt .lead{margin-top:0}
+.txt .it{font-size:24px}
+.txt>.it:first-child{margin-top:0}
+.pic{flex:none}
+.pic .shot{margin-top:0}
+
+/* --- Frame điện thoại đen 318x602, lòng 296x580 (tỷ lệ 0,5103), ảnh crop phải đúng tỷ lệ này --- */
+.row.tall{flex:1;min-height:0;margin-top:40px;gap:44px}
+.row.tall .txt{align-self:stretch;display:flex;flex-direction:column}
+.row.tall .txt .foot{margin-top:auto;padding-top:24px;font-size:24px}
+.phone{flex:0 0 318px;height:602px;position:relative;border:11px solid #101010;border-radius:42px;
+ background:#101010;overflow:hidden;box-shadow:0 18px 38px rgba(2,70,173,.18)}
+.phone img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+.phone .notch{position:absolute;top:0;left:50%;transform:translateX(-50%);width:104px;height:20px;
+ background:#101010;border-radius:0 0 14px 14px;z-index:2}
+
+/* --- Bảng. Nội dung mỗi ô BỌC TRONG <span>, vì ô là flex nên text rời và <b> sẽ bị tách --- */
+.tbl{flex:none;margin-top:26px;display:flex;flex-direction:column;
+ border:2px solid #C9CEE6;border-radius:18px;background:#fff;overflow:hidden}
+.tbl .r{display:grid;grid-template-columns:96px 1fr;border-bottom:2px solid #EEF0F8}
+.tbl .r:last-child{border-bottom:0}
+.tbl .r>div{display:flex;align-items:center;padding:14px 22px;font-size:24px;line-height:1.34}
+.tbl .r>div>span{display:block}
+.tbl .r>div+div{border-left:2px solid #EEF0F8}
+.tbl b{font-weight:700}
+.tbl.num .r>div:first-child{justify-content:center;font-family:Inter,Arial,sans-serif;font-weight:700;
+ font-size:30px;color:#0246AD;background:#F2F4FB}
+.tbl.two .r{grid-template-columns:1fr 1.35fr}
+.tbl.two .r>div:first-child{font-weight:700}
+.tbl .r.h>div{background:#F2F4FB;font-family:Inter,Arial,sans-serif;font-weight:700;font-size:22px;
+ text-transform:uppercase;letter-spacing:.2px}
+.tbl .n{color:#0246AD;font-weight:700;margin-right:10px;font-family:Inter,Arial,sans-serif}
+.tbl.tight .r>div{padding:9px 22px;font-size:23px}
+.tbl.roomy .r>div{padding:23px 24px;font-size:25px}
+.tbl .r.note>div{grid-column:1/-1;border-left:0;font-size:20px;padding:9px 22px}
+
+/* --- Hàng logo công cụ hoặc nền tảng: LUÔN căn giữa, để lệch một bên trông kỳ --- */
+.tools{flex:none;margin-top:28px;display:flex;align-items:flex-end;gap:44px;justify-content:center}
+.tool{display:flex;flex-direction:column;align-items:center;gap:12px}
+.tool img{height:104px;width:auto;display:block;border-radius:12px}
+.tool b{font-family:Inter,Arial,sans-serif;font-weight:700;font-size:23px;line-height:1.1}
+.plabel{margin:26px 0 0;font-size:24px;line-height:1.36;font-weight:700}
+.prompt{flex:none;margin-top:14px;border:2px solid #C9CEE6;border-radius:18px;background:#fff;padding:24px 26px}
+.prompt p{margin:0;font-size:24px;line-height:1.4;text-wrap:pretty}
+.prompt p+p{margin-top:10px}
+
+/* --- Hai thẻ so sánh (kịch bản A / B, cách hay làm / cách nên làm) --- */
+.cmp{margin-top:24px;display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.card{border:2px solid #C9CEE6;border-radius:16px;background:#fff;padding:26px 28px}
+.card.hi{border-color:#0246AD}
+.card .lab{font-size:25px;font-weight:700;line-height:1.3}
+.card .cap{font-family:Inter,Arial,sans-serif;font-weight:700;font-size:21px;text-transform:uppercase;
+ letter-spacing:.3px;color:#0246AD}
+.card.no .cap{color:#C60001}
+.card .big{font-size:66px;font-weight:700;line-height:1.15;margin-top:8px;font-family:Inter,Arial,sans-serif}
+.card.hi .big{color:#0246AD}
+.card .rw{margin-top:14px;padding-top:12px;border-top:2px solid #EEF1F8;font-size:24px;line-height:1.38}
+.card p{margin:18px 0 0;font-size:25px;line-height:1.4}
+.note{margin:14px 0 0;font-size:22px;line-height:1.36;color:#111111}
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     DƯỚI ĐÂY LÀ 6 KIỂU SLIDE MẪU. Giữ kiểu nào cần, xóa phần còn lại.
+     Chữ trong slide lấy NGUYÊN VĂN từ nội dung người dùng gửi.
+     Không có dòng dẫn thì bỏ <p class="lead">; không có câu chốt thì bỏ <p class="foot">.
+     ============================================================ -->
+
+<!-- KIỂU 1: bullet + ảnh băng ngang -->
+<section class="slide"><div class="content">
+<h1 class="title"><span>Dòng tiêu đề một</span><span>dòng tiêu đề hai</span></h1>
+<div class="rule"></div>
+<p class="lead">Dòng dẫn, một câu.</p>
+<div class="items">
+<div class="it"><i></i><span><b>Nhãn đầu bullet:</b> nội dung câu hoàn chỉnh.</span></div>
+<div class="it"><i></i><span><b>Nhãn thứ hai:</b> nội dung.</span></div>
+<div class="it"><i></i><span><b>Nhãn thứ ba:</b> nội dung.</span></div>
+</div>
+<div class="shot"><img src="ui-1-mo-ta.png" alt=""></div>
+<p class="foot">Câu chốt.</p>
+</div></section>
+
+<!-- KIỂU 2: hai cột, chữ bên trái + frame điện thoại bên phải (thêm class rev để đảo bên) -->
+<section class="slide"><div class="content">
+<h1 class="title"><span>01. Tiêu đề có số hạng mục</span><span>dòng hai</span></h1>
+<div class="rule"></div>
+<div class="row tall">
+<div class="txt">
+<p class="lead">Dòng dẫn.</p>
+<div class="it"><i></i><span><b>Nhãn:</b> nội dung.</span></div>
+<div class="it"><i></i><span><b>Nhãn:</b> nội dung.</span></div>
+<p class="foot">Câu chốt.</p>
+</div>
+<div class="phone"><span class="notch"></span><img src="ph-2-mo-ta.png" alt=""></div>
+</div>
+</div></section>
+
+<!-- KIỂU 3: bảng đánh số 01..04 (khối trực quan là chính bảng) -->
+<section class="slide"><div class="content">
+<h1 class="title"><span>Tiêu đề</span><span>slide bảng đánh số</span></h1>
+<div class="rule"></div>
+<p class="lead">Dòng dẫn.</p>
+<div class="tbl num">
+<div class="r"><div>01</div><div><span><b>Nhãn.</b> Nội dung dòng một.</span></div></div>
+<div class="r"><div>02</div><div><span><b>Nhãn.</b> Nội dung dòng hai.</span></div></div>
+<div class="r"><div>03</div><div><span><b>Nhãn.</b> Nội dung dòng ba.</span></div></div>
+</div>
+<p class="foot">Câu chốt.</p>
+</div></section>
+
+<!-- KIỂU 4: bảng hai cột nhãn / giá trị, có hàng tiêu đề -->
+<section class="slide"><div class="content">
+<h1 class="title"><span>Tiêu đề</span><span>slide bảng hai cột</span></h1>
+<div class="rule"></div>
+<p class="lead">Dòng dẫn.</p>
+<div class="tbl two">
+<div class="r h"><div><span>Hạng mục</span></div><div><span>Chỗ cần kiểm tra</span></div></div>
+<div class="r"><div><span>Nhãn một</span></div><div><span>Nội dung một</span></div></div>
+<div class="r"><div><span>Nhãn hai</span></div><div><span>Nội dung hai</span></div></div>
+</div>
+<p class="foot">Câu chốt.</p>
+</div></section>
+
+<!-- KIỂU 5: hai thẻ so sánh + dòng "Số minh họa" khi số liệu là giả định -->
+<section class="slide"><div class="content">
+<h1 class="title"><span>Tiêu đề</span><span>slide hai thẻ so sánh</span></h1>
+<div class="rule"></div>
+<p class="lead">Dòng dẫn.</p>
+<div class="cmp">
+<div class="card no"><div class="cap">Cách shop hay làm</div><div class="big">10 đơn</div>
+<div class="rw">Chi phí mỗi đơn <b>150.000đ</b></div></div>
+<div class="card hi"><div class="cap">Thứ tự nên đi</div><div class="big">30 đơn</div>
+<div class="rw">Chi phí mỗi đơn <b>50.000đ</b></div></div>
+</div>
+<p class="note">Số minh họa, ghi rõ giả định ngay tại đây.</p>
+<p class="foot">Câu chốt.</p>
+</div></section>
+
+<!-- KIỂU 6: hàng logo công cụ + khối chữ dài (hướng dẫn, prompt) -->
+<section class="slide"><div class="content">
+<h1 class="title"><span>01. Tiêu đề việc cần làm</span><span>dòng hai</span></h1>
+<div class="rule"></div>
+<div class="tools">
+<div class="tool"><img src="logo/cong-cu-1.png" alt=""><b>Tên công cụ</b></div>
+<div class="tool"><img src="logo/cong-cu-2.png" alt=""><b>Tên công cụ</b></div>
+</div>
+<p class="plabel">Dòng hướng dẫn in đậm, lấy nguyên văn.</p>
+<div class="prompt">
+<p>Dòng nội dung một.</p>
+<p>Dòng nội dung hai.</p>
+<p>Dòng nội dung ba.</p>
+</div>
+</div></section>
+
+</body>
+</html>

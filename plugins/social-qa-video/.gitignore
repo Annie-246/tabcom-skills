@@ -1,0 +1,4 @@
+node_modules/
+__pycache__/
+*.pyc
+skills/social-qa-video/assets/bg/

@@ -1,0 +1,25 @@
+{
+  "name": "tabcom-skills",
+  "owner": { "name": "Annie-246", "url": "https://github.com/Annie-246" },
+  "description": "Bộ skill Claude Code của Tabcom: dựng carousel, edit video dọc, video hỏi-đáp từ Threads/Facebook.",
+  "plugins": [
+    {
+      "name": "tabcom-carousel",
+      "displayName": "Tabcom Carousel",
+      "source": "./plugins/tabcom-carousel",
+      "description": "Dựng bộ ảnh carousel 1080x1080 cho Tabcom: HTML theo khung chuẩn, crop ảnh thật Shopee/TikTok Shop, render PNG bằng Playwright."
+    },
+    {
+      "name": "tabcom-video-edit",
+      "displayName": "Tabcom Video Edit",
+      "source": "./plugins/tabcom-video-edit",
+      "description": "Edit video dọc 9:16 bằng ffmpeg + Pillow (tách nền người, cảnh chữ animation, ảnh minh họa, SFX) kèm skill tạo thumbnail."
+    },
+    {
+      "name": "social-qa-video",
+      "displayName": "Social QA Video",
+      "source": "./plugins/social-qa-video",
+      "description": "Biến bài hỏi-đáp trên Threads/Facebook thành video dọc 9:16 có giọng đọc tiếng Việt và nhạc nền."
+    }
+  ]
+}
